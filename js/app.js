@@ -1,8 +1,15 @@
 document.getElementById('btn-google').addEventListener("click",authGoogle);
+document.getElementById('btn-facebook').addEventListener("click",authFacebook);
+
 function authGoogle() {
   var provider = new firebase.auth.GoogleAuthProvider();
   authentication(provider);
 }
+function authFacebook() {
+  var provider = new firebase.auth.FacebookAuthProvider();
+  authentication(provider);
+}
+
 
 function authentication(provider) {
   firebase.auth().signInWithPopup(provider).then(function(result) {
